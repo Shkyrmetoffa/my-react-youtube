@@ -2,20 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.search-bar {
   padding: 20px;
-  color: white;
 }
-
-.App-intro {
-  font-size: large;
+input {
+  width: 400px;
+  padding: 5px;
+  border: 1px solid grey;
 }
 
 @keyframes App-logo-spin {

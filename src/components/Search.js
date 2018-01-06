@@ -13,12 +13,17 @@ export class Search extends Component {
           value={ this.state.term }
           onChange={ e => this.inputChange(e.target.value) } 
         />
+        <button 
+          // onClick={ this.setState({term}) }
+        >
+          Submit
+        </button>
       </div>
     );
   }
-
+  
   inputChange(term) {
-    this.setState({term});
+    // this.setState({term});
     this.props.searchChange(term);
   }
 }

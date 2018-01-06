@@ -8,7 +8,7 @@ const Item = props => {
     <div className="video-list media">
       <div className="video-list media">
         <div className="media-left">
-          <img className="media-object" src = {urlImg} />
+          <img className="media-object" src = {urlImg} alt="video" />
         </div>
       </div>  
       <div className="media-body">
