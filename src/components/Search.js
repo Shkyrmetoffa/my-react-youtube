@@ -7,23 +7,27 @@ export class Search extends Component {
   }
 
   render() {
+    const { term } = this.state;
+    
     return (
       <div className="search-bar">
         <input 
-          value={ this.state.term }
+          value={ term }
           onChange={ e => this.inputChange(e.target.value) } 
         />
         <button 
-          // onClick={ this.setState({term}) }
+          onClick={ () => this.buttonSubmit(term) }
         >
           Submit
         </button>
       </div>
     );
   }
-  
-  inputChange(term) {
-    // this.setState({term});
+  buttonSubmit(term) {
     this.props.searchChange(term);
+  }
+
+  inputChange(term) {
+    this.setState({term});
   }
 }
