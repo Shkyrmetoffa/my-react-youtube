@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { Link } from "react-router-dom";
 
 export class Search extends Component {
   constructor(props) {
@@ -8,7 +9,6 @@ export class Search extends Component {
 
   render() {
     const { term } = this.state;
-    
     return (
       <div className="search-bar">
         <input 
