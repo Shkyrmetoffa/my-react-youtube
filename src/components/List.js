@@ -9,13 +9,6 @@ export const List = props => {
         selectVideos={props.selectVideos}
         key={index} 
         video={video} />
-    //   <Route
-    //   path="/video"
-    //   render={() => <Item
-    //     selectVideos={props.selectVideos}
-    //     key={index} 
-    //     video={video} />}
-    // />
     );
   });
   return (

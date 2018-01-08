@@ -6,15 +6,15 @@ export const Detail = ({video}) => {
   }
   const videoId = video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoId}`;
-
+  const snippet = video.snippet;
   return (
     <div className="video-detail col-md-8">
       <div className="embed-responsive embed-responsive-16by9">
         <iframe  title="random" src={url} ></iframe>
       </div>
       <div className="details">
-        <div>{video.snippet.title}</div>
-        <div>{video.snippet.description}</div>
+        <div>{snippet.title}</div>
+        <div>{snippet.description}</div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import YTSearch from 'youtube-api-search';
 import _ from 'lodash';
 import { Search, Detail, List } from './components/index';
+import { Routes } from './Routes';
 import './App.css';
 
 const API_KEY = `AIzaSyC1ORL6Y3zxvLLev6QHUqP8eF1hFbYo1WI`;
@@ -11,7 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
       selectedVideo: '',
-      videos: []
+      videos: [],
+      detail: Detail
     };
      this.videoSearch('secret');
   }
@@ -30,11 +32,14 @@ class App extends Component {
   
   render() {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 500);
-    return (
+      return (
       <main className="container">
        <Search searchChange = {videoSearch} />
         <div className="row">
-          <Detail video={this.state.selectedVideo} />
+          {/* <Detail video={this.state.selectedVideo} /> */}
+          <Routes
+            detail={this.state.detail}
+            video={this.state.selectedVideo} />
           <List selectVideos={selectedVideo => this.setState({ selectedVideo }) }
             videos={this.state.videos} 
           />
