@@ -8,10 +8,10 @@ class Routes extends Component {
     return (
       <Switch>
         <Route 
-          path="/movie/1" 
-          render={ ({location}) => {
-            console.log(location);
-            return ( <Detail video={video} /> ) 
+          path="/movie/:id" 
+          render={ ({match}) => {
+            console.log(match.params.id);
+            return ( <Detail video={video} id={match.params.id} /> ) 
           }
   } 
 />

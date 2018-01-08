@@ -1,10 +1,11 @@
 import React from 'react';
 
-export const Detail = ({video}) => {
+export const Detail = ({video, id}) => {
   if (!video) {
     return <div>Loading...</div>;
   }
-  const videoId = video.id.videoId;
+  // const videoId = video.id.videoId;
+  const videoId = id;
   const url = `https://www.youtube.com/embed/${videoId}`;
   const snippet = video.snippet;
   return (
