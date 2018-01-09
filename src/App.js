@@ -16,7 +16,7 @@ class AppComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedVideo: "",
+      // selectedVideo: "",
       videos: []
     };
     this.videoSearch("secret");
@@ -62,7 +62,7 @@ YTSearch({ key: API_KEY, term: term }, video => {
       <main className="container">
         <Search searchChange={videoSearch} />
           <div className="row">
-            <Detail video={this.props.selectedVideo} />
+            <Detail selectedVideo={this.props.selectedVideo} />
               <List
                 selectVideos={selectedVideo => this.setState({selectedVideo})}
                 videos={this.state.videos}
@@ -72,8 +72,8 @@ YTSearch({ key: API_KEY, term: term }, video => {
     );
   }
 }
-const mapState = ({ video }) => ({
-  video
+const mapState = ({ selectedVideo }) => ({
+  selectedVideo
 });
 const mapDispatch = {
   selectedVideo

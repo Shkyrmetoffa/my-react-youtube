@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Detail = ({video, id}) => {
+const Detail = ({video}) => {
   if (!video) {
     return <div>Loading...</div>;
   }
