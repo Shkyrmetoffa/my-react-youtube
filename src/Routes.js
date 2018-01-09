@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { Route, Switch } from 'react-router-dom';
-import { Detail } from "./components/index";
+import Item from "./components/Item";
 
 class Routes extends Component {
   render() {
-    const { video } = this.props;
+    const { selectVideos, video } = this.props;
     return (
       <Switch>
         <Route 
-          path="/movie/:id" 
-          render={ ({match}) => {
-            console.log(match.params.id);
-            return ( <Detail video={video} id={match.params.id} /> ) 
+          path="/:index"
+          render={ () => {
+            return ( <Item selectVideos={selectVideos} video={video} /> ) 
           }
-  } 
-/>
+          } 
+        />
       </Switch>
   );
 }

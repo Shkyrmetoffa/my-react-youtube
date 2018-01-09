@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
 
-export class Search extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = { term: '' };
@@ -31,3 +30,5 @@ export class Search extends Component {
     this.setState({term});
   }
 }
+
+export default Search;
