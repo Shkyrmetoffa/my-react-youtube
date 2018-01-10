@@ -13,7 +13,7 @@ const Root = (
     <Router>
       <App />
     </Router> 
-  </Provider>  
+   </Provider>  
 );
 
 ReactDOM.render(Root, document.getElementById('root'));

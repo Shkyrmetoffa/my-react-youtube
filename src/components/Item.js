@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Item = (props) => {
-  // console.log(match.params);
   const {video, selectVideos} = props;
   const urlImg = video.snippet.thumbnails.default.url;
   return (

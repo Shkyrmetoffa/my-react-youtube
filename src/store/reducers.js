@@ -1,18 +1,19 @@
-import { ADD_TASK, SELECT_VIDEO } from './actions';
-
-export const tasks = (state = [], action) => {
+import { SET_VIDEOS, SET_TERM } from './actions';
+export const videos = (state = [], action) => {
   switch (action.type) {
-    case ADD_TASK: {
-      return [...state, ...action.payload];
-    }
-  }
-  return state;
-};
-export const video = (state = "", action) => {
-    switch (action.type) {
-      case SELECT_VIDEO: {
-          return action.payload;
+    case SET_VIDEOS: {
+        return [...state, action.payload];
       }
+    default: // Do nothing
     }
     return state;
   };
+export const term = (state = '', action) => {
+  switch (action.type) {
+    case SET_TERM: {
+      return action.payload;
+    }
+    default: // Do nothing
+  }
+  return state;
+};

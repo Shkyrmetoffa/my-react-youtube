@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setTerm } from '../store';
 
-class Search extends Component {
+class SearchComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { term: '' };
   }
 
   render() {
-    const { term } = this.state;
+    const { term } = this.props;
     return (
       <div className="search-bar">
         <input 
@@ -27,8 +28,16 @@ class Search extends Component {
   }
 
   inputChange(term) {
-    this.setState({term});
+    this.props.setTerm(term);
   }
 }
 
-export default Search;
+const mapState = ({term}) => ({
+  term
+});
+const mapDispatch = dispatch => ({
+  setTerm(data) {
+    dispatch(setTerm(data));
+  }
+});
+export const Search = connect(mapState, mapDispatch)(SearchComponent);
