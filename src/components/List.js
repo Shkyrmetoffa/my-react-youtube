@@ -1,26 +1,34 @@
-import React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
+import {store } from '../store';
 
 import Item from './Item';
 
-const List = props => {
-  const itemsVideo = props.videos.map((video, index) => {
+export const List = props => {
+  const state = store.getState();
     return (
-      <Link 
-        to={`/movie/${index}`}
-        key={index}
-      >
-      <Item 
-        selectVideos={props.selectVideos}
-        video={video}
-      />
-    </Link>
-    )
-  });
-  return (
-    <ul className="col-md-4 list-group">
-      {itemsVideo}
-    </ul>
-  );
-}
+      <ul className="col-md-4 list-group"> {
+        state.videos.map(item => (
+          item.videos.map((video, index) => (
+            <li
+              key={index}
+            > 
+              <Link 
+                to={`/movie/${index}`}
+                key={index}
+              >
+                <Item 
+                  selectVideos={props.selectVideos}
+                  video={video}
+                />
+              </Link>
+            </li>
+          ))
+         )
+        )
+      }
+      </ul>
+    );
+  }
+  
 export default List;
