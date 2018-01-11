@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Item from "./components/Item";
 
 class Routes extends Component {
   render() {
@@ -10,12 +9,17 @@ class Routes extends Component {
         <Route 
           path="/:index"
           render={ () => {
-            return ( <Item selectVideos={selectVideos} video={video} /> ) 
-          }
-          } 
+            return ( 
+              <Item 
+                selectVideos={selectVideos} 
+                video={video} 
+              /> 
+            ) 
+          } } 
         />
       </Switch>
-  );
-}
-}
+    );
+  }
+};
+
 export default Routes;

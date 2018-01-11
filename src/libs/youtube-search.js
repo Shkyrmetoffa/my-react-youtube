@@ -1,13 +1,13 @@
-var axios = require('axios');
+const axios = require('axios');
 
-var ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
+const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
 
-module.exports = function (options, callback) {
+module.exports = (options, callback) => {
   if (!options.key) {
     throw new Error('Youtube Search expected key, received undefined');
   }
-  var params = {
-      maxResults: 10,
+  let params = {
+    maxResults: 10,
     part: 'snippet',
     key: options.key,
     q: options.term,
@@ -15,10 +15,10 @@ module.exports = function (options, callback) {
   };
 
   axios.get(ROOT_URL, { params: params })
-    .then(function(response) {
+    .then(response => {
       if (callback) { callback(response.data.items); }
     })
-    .catch(function(error) {
+    .catch(error => {
       console.error(error);
     });
 };

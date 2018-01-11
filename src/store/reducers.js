@@ -1,13 +1,16 @@
 import { SET_VIDEOS, SET_TERM } from './actions';
+
 export const videos = (state = [], action) => {
   switch (action.type) {
     case SET_VIDEOS: {
-        return [...state, action.payload];
-      }
-    default: // Do nothing
+      const videos = action.payload.videos;
+        return [...videos];
     }
+    default: // Do nothing
+  }
     return state;
-  };
+};
+  
 export const term = (state = '', action) => {
   switch (action.type) {
     case SET_TERM: {
@@ -15,5 +18,5 @@ export const term = (state = '', action) => {
     }
     default: // Do nothing
   }
-  return state;
+    return state;
 };
