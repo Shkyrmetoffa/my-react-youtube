@@ -13,16 +13,25 @@ export const SearchComponent = props => {
   }
 
   return (
-    <div className="search-bar">
-      <input 
-        value={ term }
-        onChange={ e => inputChange(e.target.value) } 
-      />
-      <button 
-        onClick={ () => buttonSubmit(term) }
-      >
-        Submit
-       </button>
+    <div className="col-lg-6">
+      <div className="input-group">
+        <input type="text" 
+          className="form-control" 
+          placeholder="Search for..."
+          value={ term }
+          onChange={ e => inputChange(e.target.value) }
+        />
+        <span 
+          className="input-group-btn">
+            <button 
+              className="btn btn-default" 
+              type="button"
+              onClick={ () => buttonSubmit(term) }
+            >
+              Go!
+            </button>
+        </span>
+      </div>
     </div>
   );
 };
